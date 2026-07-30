@@ -9,6 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- linking my css file -->
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body class="text-[#002C5C]">
 
@@ -22,17 +24,29 @@
                 <h1 class="text-3xl font-bold">8</h1>
             </div>
             <div class="card bg-base-100 w-96 shadow-sm p-[20px] bg-white">
-                <p>Total</p>
-                <h1 class="text-3xl font-bold">8</h1>
+                <p>Interview</p>
+                <h1 class="text-3xl font-bold text-green-400">0</h1>
             </div>
             <div class="card bg-base-100 w-96 shadow-sm p-[20px] bg-white">
-                <p>Total</p>
-                <h1 class="text-3xl font-bold">8</h1>
+                <p>Rejected</p>
+                <h1 class="text-3xl font-bold text-red-400">0</h1>
             </div>
         </div>
         <hr>
     </section>
 
-
+    <!-- cards section -->
+    <section class="container mx-auto">
+        <!-- button segment -->
+        <div>
+            <h1 class="mt-11 text-2xl font-semibold">Available jobs</h1>
+            <div class="flex gap-3 pt-[24px]">
+                <button class="buttonBox" >All</button>
+                <button class="buttonBox">Interview</button>
+                <button class="buttonBox">Rejected</button>
+            </div>
+        </div>
+        
+    </section>
 </body>
 </html>

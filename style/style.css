@@ -1,0 +1,7 @@
+.buttonBox{
+    height: 32px;
+    width: 80px;
+    background-color: rgb(44, 167, 255);
+    color: white;
+    border-radius: 6px;
+}
