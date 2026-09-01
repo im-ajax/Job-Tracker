@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Job Tracking Application</title>
     <!-- This is the part of DaisyUI CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body class="text-[#002C5C] bg-base-200 pb-10 pt-11">
-
     <!-- total dashboard -->
     <section class="container mx-auto ">
         <h1 class="text-4xl font-bold mb-4">Job Tracking Application</h1>
@@ -25,11 +24,11 @@
             </div>
             <div class="card bg-base-100 shadow-sm p-[20px] bg-white w-[495px]">
                 <p>Interview</p>
-                <h1 class="text-3xl font-bold text-green-400">0</h1>
+                <h1 id="interview-count" class="text-3xl font-bold text-green-400">0</h1>
             </div>
             <div class="card bg-base-100 shadow-sm p-[20px] bg-white w-[495px]">
                 <p>Rejected</p>
-                <h1 class="text-3xl font-bold text-red-400">0</h1>
+                <h1 id="rejected-count" class="text-3xl font-bold text-red-400">0</h1>
             </div>
         </div>
         <hr class="opacity-20">
@@ -49,14 +48,15 @@
                 <button id="selector-3" class="buttonBox">Rejected</button>
             </div>
         </div>
-
+    </section>
+    <section id="all-section" class="container mx-auto">
         <!-- cards section -->
         <div id="cards-sec" class="mt-5 space-y-6">
-            <div class="card w-[1536px] bg-base-100 card-md shadow-sm">
+            <div id="card-1" class="card w-[1536px] bg-base-100 card-md shadow-sm">
                 <div class="card-body">
                     <div class="flex justify-between">
                         <h2 class="card-title font-bold ">Mobile First corp</h2>
-                        <button class="btn btn-circle btn-outline btn-error btn-sm">
+                        <button id="del-btn-1" class="btn btn-circle btn-outline btn-error btn-sm">
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
                     </div>
@@ -68,15 +68,15 @@
                     <p>Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
                     <div class="space-x-2">
                         <button id="job-1-btn" class="btn btn-outline btn-success">Interview</button>
-                        <button class="btn btn-outline btn-error">Rejected</button>
+                        <button id="reject-1" class="btn btn-outline btn-error">Rejected</button>
                     </div>
                 </div>
             </div>   
-            <div class="card w-[1536px] bg-base-100 card-md shadow-sm">
+            <div id="card-2" class="card w-[1536px] bg-base-100 card-md shadow-sm">
                 <div class="card-body">
                     <div class="flex justify-between">
                         <h2 class="card-title font-bold ">WebFlow Agency</h2>
-                        <button class="btn btn-circle btn-outline btn-error btn-sm">
+                        <button id="del-btn-2" class="btn btn-circle btn-outline btn-error btn-sm">
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
                     </div>
@@ -88,15 +88,15 @@
                     <p>Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
                     <div class="space-x-2">
                         <button id="job-2-btn" class="btn btn-outline btn-success">Interview</button>
-                        <button class="btn btn-outline btn-error">Rejected</button>
+                        <button id="reject-2" class="btn btn-outline btn-error">Rejected</button>
                     </div>
                 </div>
-            </div>  
-            <div class="card w-[1536px] bg-base-100 card-md shadow-sm">
+            </div>
+            <div id="card-3" class="card w-[1536px] bg-base-100 card-md shadow-sm">
                 <div class="card-body">
                     <div class="flex justify-between">
                         <h2 class="card-title font-bold ">DataViz Solutions</h2>
-                        <button class="btn btn-circle btn-outline btn-error btn-sm">
+                        <button id="del-btn-3" class="btn btn-circle btn-outline btn-error btn-sm">
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
                     </div>
@@ -108,15 +108,15 @@
                     <p>Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
                     <div class="space-x-2">
                         <button id="job-3-btn" class="btn btn-outline btn-success">Interview</button>
-                        <button class="btn btn-outline btn-error">Rejected</button>
+                        <button id="reject-3" class="btn btn-outline btn-error">Rejected</button>
                     </div>
                 </div>
             </div>  
-            <div class="card w-[1536px] bg-base-100 card-md shadow-sm">
+            <div id="card-4" class="card w-[1536px] bg-base-100 card-md shadow-sm">
                 <div class="card-body">
                     <div class="flex justify-between">
                         <h2 class="card-title font-bold ">CloudFirst INC</h2>
-                        <button class="btn btn-circle btn-outline btn-error btn-sm">
+                        <button id="del-btn-4" class="btn btn-circle btn-outline btn-error btn-sm">
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
                     </div>
@@ -128,15 +128,15 @@
                     <p>Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
                     <div class="space-x-2">
                         <button id="job-4-btn" class="btn btn-outline btn-success">Interview</button>
-                        <button class="btn btn-outline btn-error">Rejected</button>
+                        <button id="reject-4" class="btn btn-outline btn-error">Rejected</button>
                     </div> 
                 </div>
-            </div>  
-            <div class="card w-[1536px] bg-base-100 card-md shadow-sm">
+            </div>
+            <div id="card-5" class="card w-[1536px] bg-base-100 card-md shadow-sm">
                 <div class="card-body">
                     <div class="flex justify-between">
                         <h2 class="card-title font-bold ">Innovation Labs</h2>
-                        <button class="btn btn-circle btn-outline btn-error btn-sm">
+                        <button id="del-btn-5" class="btn btn-circle btn-outline btn-error btn-sm">
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
                     </div>
@@ -148,15 +148,15 @@
                     <p>Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
                     <div class="space-x-2">
                         <button id="job-5-btn" class="btn btn-outline btn-success">Interview</button>
-                        <button class="btn btn-outline btn-error">Rejected</button>
+                        <button id="reject-5" class="btn btn-outline btn-error">Rejected</button>
                     </div>
                 </div>
             </div>  
-            <div class="card w-[1536px] bg-base-100 card-md shadow-sm">
+            <div id="card-6" class="card w-[1536px] bg-base-100 card-md shadow-sm">
                 <div class="card-body">
                     <div class="flex justify-between">
                         <h2 class="card-title font-bold ">MegaCorp Solutions</h2>
-                        <button class="btn btn-circle btn-outline btn-error btn-sm">
+                        <button id="del-btn-6" class="btn btn-circle btn-outline btn-error btn-sm">
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
                     </div>
@@ -168,15 +168,15 @@
                     <p>  Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
                     <div class="space-x-2">
                         <button id="job-6-btn" class="btn btn-outline btn-success">Interview</button>
-                        <button class="btn btn-outline btn-error">Rejected</button>
+                        <button id="reject-6" class="btn btn-outline btn-error">Rejected</button>
                     </div>
                 </div>
             </div>  
-            <div class="card w-[1536px] bg-base-100 card-md shadow-sm">
+            <div id="card-7" class="card w-[1536px] bg-base-100 card-md shadow-sm">
                 <div class="card-body">
                     <div class="flex justify-between">
                         <h2 class="card-title font-bold ">StartupXYZ</h2>
-                        <button class="btn btn-circle btn-outline btn-error btn-sm">
+                        <button id="del-btn-7" class="btn btn-circle btn-outline btn-error btn-sm">
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
                     </div>
@@ -188,15 +188,15 @@
                     <p>Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
                     <div class="space-x-2">
                         <button id="job-7-btn" class="btn btn-outline btn-success">Interview</button>
-                        <button class="btn btn-outline btn-error">Rejected</button>
+                        <button id="reject-7" class="btn btn-outline btn-error">Rejected</button>
                     </div>
                 </div>
             </div>  
-            <div class="card w-[1536px] bg-base-100 card-md shadow-sm">
+            <div id="card-8" class="card w-[1536px] bg-base-100 card-md shadow-sm">
                 <div class="card-body">
                     <div class="flex justify-between">
                         <h2 class="card-title font-bold ">TechCorp Industries</h2>
-                        <button class="btn btn-circle btn-outline btn-error btn-sm">
+                        <button id="del-btn-8" class="btn btn-circle btn-outline btn-error btn-sm">
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
                     </div>
@@ -208,12 +208,16 @@
                     <p>We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
                     <div class="space-x-2">
                         <button id="job-8-btn" class="btn btn-outline btn-success">Interview</button>
-                        <button class="btn btn-outline btn-error">Rejected</button>
+                        <button id="reject-8" class="btn btn-outline btn-error">Rejected</button>
                     </div> 
                 </div>
             </div>  
-            
         </div>  
+    </section>
+    <section class="container mx-auto">
+        <div class="bg-base-100">
+            
+        </div>
     </section>
     <script src="./jsFiles/counter.js"></script>
     <script src="./jsFiles/changer.js"></script>

@@ -1,4 +1,4 @@
-function btnChanger(id1,id2,id3){
+function btnChanger(id1,id2,id3,id4,interviewCounter){
     const hideBtn=document.getElementById(id1);
     hideBtn.classList.add("hidden");
     const statusBox = document.createElement("div");
@@ -16,13 +16,32 @@ function btnChanger(id1,id2,id3){
     );
     document.getElementById(id2).appendChild(statusBox);
     document.getElementById(id3).disabled='true';
+    document.getElementById(id4).disabled='true';
+    interviewCounter++;
+    const interviewPreview=document.getElementById('interview-count');
+    interviewPreview.innerText=interviewCounter;
 }
-//items selector color pallete
-// needs rework
-function selectorColor(id1,id2){
-    const btn=document.getElementById(id1);
-    btn.style.backgroundColor='white';
-    btn.style.color='black';
-    btn.style.border='1px solid black';
-    selectorColor(id2)
+//rejection button
+function btnChanger2(id1,id2,id3,id4,rejectCount){
+    const hideBtn=document.getElementById(id1);
+    hideBtn.classList.add("hidden");
+    const statusBox = document.createElement("div");
+    statusBox.textContent = "Rejected";
+    statusBox.classList.add(
+        "bg-error",
+        "text-success-content",
+        "rounded-md",
+        "px-4",
+        "py-2",
+        "font-semibold",
+        "inline-block",
+        "text-center",
+        "text-white"
+    );
+    document.getElementById(id2).appendChild(statusBox);
+    document.getElementById(id3).disabled='true';
+    document.getElementById(id4).disabled='true';
+    rejectCount++;
+    const rejectPreview=document.getElementById('rejected-count');
+    rejectPreview.innerText=rejectCount;
 }
